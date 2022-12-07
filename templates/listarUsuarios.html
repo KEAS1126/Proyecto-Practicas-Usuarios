@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear usuarios</title>
+     <link rel="stylesheet" href="{% static '/estilos.css' %}">
+</head>
+
+<body>
+    <h1>Listar Usuarios</h1>
+
+       <button><a href="{% url 'crearU' %}">Crear usuario</a></button>
+    <table id="customers">
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Celular</th>
+            <th>Ciudad</th>
+        </tr>
+
+            {% for listar in usuario %}
+                <tr>
+                    <td>{{listar.nombre}}</td>
+                    <td>{{listar.correo}}</td>
+                    <td>{{listar.celular}}</td>
+                    <td>{{listar.ciudad}}</td>
+                </tr>
+            {% endfor %}
+
+
+    </table>
+</body>
+
+</html>

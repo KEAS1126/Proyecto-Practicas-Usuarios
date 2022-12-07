@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear usuarios</title>
+    <link rel="stylesheet" href="{% static '/estilos.css' %}">
+</head>
+<body>
+    <h1>Crear un usuarios</h1>
+    <div>
+        <form action=""  method="post" enctype="multipart/form-data">{% csrf_token %}
+            <label for="">Imagen</label>
+            {{formulario_usuario.imagen}}
+            <label for="">Nombre</label>
+            {{formulario_usuario.nombre}}
+            <label for="">Correo</label>
+            {{formulario_usuario.correo}}
+            <label for="">Celular</label>
+            {{formulario_usuario.celular}}
+            <label for="">Ciudad</label>
+            {{formulario_usuario.ciudad}}
+            <label for="">Contraseña</label>
+            {{formulario_usuario.contrasena}}
+            <button class="button">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>
