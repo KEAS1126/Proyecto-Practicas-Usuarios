@@ -15,18 +15,26 @@
        <button><a href="{% url 'crearU' %}">Crear usuario</a></button>
     <table id="customers">
         <tr>
+            <th>fecha Creacion</th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>Celular</th>
             <th>Ciudad</th>
+            <th>Imagen</th>
         </tr>
 
             {% for listar in usuario %}
                 <tr>
+                    <td>{{listar.fechaCreacion}}</td>
                     <td>{{listar.nombre}}</td>
                     <td>{{listar.correo}}</td>
                     <td>{{listar.celular}}</td>
                     <td>{{listar.ciudad}}</td>
+                    {% if listar.imagen %}
+                        <td><img src="{{listar.imagen.url}}" style="height: 200px; width: 200px" alt="imagen"></td>
+                    {% else %}
+                        <td><img src="" style="height: 200px; width: 200px" alt="no imagen"></td>
+                    {% endif %}
                 </tr>
             {% endfor %}
 

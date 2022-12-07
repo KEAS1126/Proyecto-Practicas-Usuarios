@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Usuarios(models.Model):
+    fechaCreacion = models.DateTimeField(auto_now_add=True)
     idUsuario = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=60)
     correo = models.EmailField()
